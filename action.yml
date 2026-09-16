@@ -8,6 +8,13 @@ inputs:
   octocat-eye-color:
     description: 'Eye color of the Octocats'
     required: true
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
 runs:
-  using: 'node24'
-  main: 'main.js'
+  using: "composite"
+  steps:
+    - id: random-number-generator
+      run: echo "random-id=$(echo $RANDOM)" >> $GITHUB_OUTPUT
+      shell: bash
