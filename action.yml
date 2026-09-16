@@ -1,0 +1,13 @@
+name: 'Octocat Generator'
+description: 'Generate custom Octocats with specified properties'
+inputs:
+  num-octocats:
+    description: 'Number of Octocats'
+    required: false
+    default: '1'
+  octocat-eye-color:
+    description: 'Eye color of the Octocats'
+    required: true
+runs:
+  using: 'node24'
+  main: 'main.js'
