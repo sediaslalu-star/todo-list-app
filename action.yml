@@ -12,6 +12,3 @@ outputs:
   random-number:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.random-id }}
-runs:
-  using: 'node24'
-  main: 'main.js'
